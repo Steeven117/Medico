@@ -13,15 +13,6 @@ def salir():
     ventana_principal.destroy()
 
 
-
-
-
-
-
-
-
-
-
 #Diseño de la app
 ventana_principal = tk.Tk( )
 
