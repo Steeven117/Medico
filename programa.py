@@ -8,8 +8,9 @@ import tkinter as tk
 
 
 
-
-
+def salir():
+    messagebox.showinfo("Datos Medicos", "La APP se cerrara, ¿Desea continuar?")
+    ventana_principal.destroy()
 
 
 
@@ -45,7 +46,9 @@ ventana_principal.config(bg="Sky blue2")
 #Variables de control
 Paciente = StringVar()
 TI_CC = StringVar()
-
+Edad = StringVar()
+Altura = StringVar()
+Peso = StringVar()
 
 #Ventana secundaria superior
 frame_entrada = Frame(ventana_principal)
@@ -89,27 +92,52 @@ frame_operaciones.config(bg="white", width=480, height=270)
 frame_operaciones.place(x=10, y=265)
 
 #Etiqueta para Edad
-lb_a = Label(frame_operaciones, text="Edad: ")
-lb_a.config(bg="white", fg="Blue", font=("Helvetica", 20))
-lb_a.place(x=90, y=60)
+lb_c = Label(frame_operaciones, text="Edad: ")
+lb_c.config(bg="white", fg="Blue", font=("Helvetica", 20))
+lb_c.place(x=10, y=30)
 
-
+#Caja de texto
+entry_c = Entry(frame_operaciones, textvariable=Edad)
+entry_c.config(bg="white", fg="Black", font=("Courier", 12))
+entry_c.place(x=100, y=35, width=115, height=30)
 
 #Etiqueta para Altura
+lb_d = Label(frame_operaciones, text="Altura: ")
+lb_d.config(bg="white", fg="Blue", font=("Helvetica", 20))
+lb_d.place(x=10, y=95)
 
-
-
+#Caja de texto
+entry_d = Entry(frame_operaciones, textvariable=Altura)
+entry_d.config(bg="white", fg="Black", font=("Courier", 12))
+entry_d.place(x=100, y=100, width=115, height=30)
 
 #Etiqueta para Peso corporal
+lb_e = Label(frame_operaciones, text="Peso: ")
+lb_e.config(bg="white", fg="Blue", font=("Helvetica", 20))
+lb_e.place(x=10, y=160)
 
+#Caja de texto
+entry_e = Entry(frame_operaciones, textvariable=Peso)
+entry_e.config(bg="white", fg="Black", font=("Courier", 12))
+entry_e.place(x=100, y=165, width=115, height=30)
 
-
-
+#Boton de calcular
+bt_calcular=Button(frame_operaciones, text="calcular", command=calcular)
+bt_calcular.place(x=200, y=220,width=100, height=30)
 
 #Ventana secundaria inferior
 frame_resultados = Frame(ventana_principal)
 frame_resultados.config(bg="white", width=485, height=180)
 frame_resultados.place(x=10, y=600)
+
+#Area de texto para resultados
+t_resultados=Text(frame_resultados)
+t_resultados.config(bg="black", fg="green", font=("Courier", 20))
+t_resultados.place(x=10, y=10, width=460, height=160)
+
+#Boton de salir
+bt_salir=Button(frame_resultados, text="salir", command=salir)
+bt_salir.place(x=200, y=145,width=100, height=30)
 
 
 
