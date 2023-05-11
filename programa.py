@@ -27,6 +27,8 @@ def borrar():
     Nota2.set("")
     Nota3.set("")
     Nota4.set("")
+    Estudiante.set("")
+    TI_CC.set("") 
     t_resultados.delete("1.0", "end")
 
 
@@ -45,7 +47,7 @@ icono = tk.PhotoImage(file="img/logo.png")
 ventana_principal.iconphoto(True, icono)
 
 #Titulo de la ventana
-ventana_principal.title("Datos Medicos")
+ventana_principal.title("Walter Navarro")
 
 #Tamaño de la ventana
 ventana_principal.geometry("500x800")
